@@ -8,14 +8,14 @@ CITY_DATA = { 'Chicago': 'chicago.csv',
 
 
 def get_filters():
-    Returns:
+    Return:
         (str) city 
         (str) month 
         (str) day 
    
     while True:
       city = input("\n Which city would you like to filter by from those cities New York City, Chicago or Washington?\n")
-      if cities not in ('New York City', 'Chicago', 'Washington'):
+      if city not in ('New York City', 'Chicago', 'Washington'):
         print("Sorry, I didn't catch that. Try again.")
         continue
       else:
@@ -40,10 +40,10 @@ def get_filters():
       else:
         break
 
-    return cities, months, days
+    return city, month, day
 
 
-def load_data(cities, months, days):
+def load_data(city, month, day):
 
     Args:
         (str) city
