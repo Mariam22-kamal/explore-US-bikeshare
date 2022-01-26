@@ -8,10 +8,7 @@ CITY_DATA = { 'Chicago': 'chicago.csv',
 
 
 def get_filters():
-    Return:
-        (str) city 
-        (str) month 
-        (str) day 
+    
    
     while True:
       city = input("\n Which city would you like to filter by from those cities New York City, Chicago or Washington?\n")
@@ -45,18 +42,8 @@ def get_filters():
 
 def load_data(city, month, day):
 
-    Args:
-        (str) city
-        (str) month
-        (str) day
-    Returns:
-        df 
-   
     df = pd.read_csv(CITY_DATA[city])
-
-   
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-
 
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
